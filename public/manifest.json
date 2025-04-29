@@ -1,6 +1,6 @@
 {
   "short_name": "Portfolio",
-  "name": "Your Name - Portfolio Website",
+  "name": "Manesha Chand",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "star-logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "star-logo-large.png",
       "type": "image/png",
       "sizes": "512x512"
     }

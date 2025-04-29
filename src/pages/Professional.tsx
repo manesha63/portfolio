@@ -4,12 +4,12 @@ import emailjs from '@emailjs/browser';
 import Navbar from '../components/Navbar';
 
 // Initialize EmailJS with public key
-emailjs.init("kCOMt4Yqd03TWNW1o");
+emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "kCOMt4Yqd03TWNW1o");
 
 // EmailJS configuration
-const EMAILJS_SERVICE_ID = 'service_b1ncoz8';  // Your Gmail service ID
-const EMAILJS_TEMPLATE_ID = 'template_2if8pop'; // Your confirmed template ID
-const EMAILJS_PUBLIC_KEY = 'kCOMt4Yqd03TWNW1o'; // Your public key
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_b1ncoz8';
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_2if8pop';
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'kCOMt4Yqd03TWNW1o';
 
 const Professional: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -132,11 +132,11 @@ const Professional: React.FC = () => {
               <h3 className="text-xl font-semibold text-text-primary mb-2">City College of San Francisco</h3>
               <p className="text-text-secondary">Associate's in Computer Science</p>
               <p className="text-text-secondary">Fall 2023 - Spring 2025</p>
-              <p className="text-text-secondary font-medium">CGPA: 3.57</p>
             </div>
             <div className="card hover-glow mt-4">
               <h3 className="text-xl font-semibold text-text-primary mb-2">Himalayan White House International SS</h3>
-              <p className="text-text-secondary">High School Diploma</p>
+              <p className="text-text-secondary">High School graduate</p>
+              <p className="text-text-secondary">Stream: <a href="https://ccrc.edu.np/science/#:~:text=Science%20%E2%80%93%20NEB%20(%2B2)&text=In%20Science%20Stream%2C%20the%20students,other%20fields%20of%20Physical%20Sciences." target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-light">Science</a></p>
               <p className="text-text-secondary">2019 - 2022</p>
           </div>
         </motion.section>
@@ -173,7 +173,7 @@ const Professional: React.FC = () => {
               <div className="card hover-glow">
                 <h3 className="text-xl font-semibold text-text-primary mb-4">Tools & Platforms</h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Git', 'VS Code', 'Firebase', 'Vercel'].map((skill) => (
+                  {['Git', 'VS Code', 'Firebase', 'Vercel', 'AI Prompting'].map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-accent/10 rounded-full text-text-secondary">
                       {skill}
                     </span>
@@ -267,59 +267,30 @@ const Professional: React.FC = () => {
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
             className="mb-16"
           >
             <h2 className="text-3xl font-bold text-gradient mb-8">Resume</h2>
-            <div className="card hover-glow p-6">
-              <div className="flex flex-col items-center">
-                <p className="text-text-secondary mb-6 text-center">
-                  Download my resume to learn more about my professional experience and qualifications.
-                </p>
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors duration-300 flex items-center gap-2"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                  Download Resume
-                </a>
+            <div className="card hover-glow p-6 flex flex-col items-center justify-center">
+              <div className="text-6xl mb-4 text-accent">
+                <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M13,13V15H17V13H13M13,17V19H17V17H13M9,13H11V19H9V13Z" />
+                </svg>
               </div>
-            </div>
-          </motion.section>
-
-          {/* Resume & Cover Letter Section */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="mb-16 pt-16"
-          >
-            <h2 className="text-3xl font-bold text-gradient mb-8">Documents</h2>
-            <div className="max-w-md mx-auto">
-              {/* Resume Card */}
-              <div className="card hover-glow p-6 flex flex-col items-center justify-center">
-                <div className="mb-4">
-                  <svg className="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-text-primary mb-2">Resume</h3>
-                <p className="text-text-secondary text-center mb-6">Download my latest resume to learn more about my experience and skills.</p>
-                <button 
-                  onClick={() => window.open('/resume.pdf', '_blank')}
-                  className="px-6 py-2 bg-button hover:bg-button-hover text-white font-semibold rounded-lg
-                           transition-all duration-300 hover:shadow-[0_0_20px_rgba(167,139,250,0.5)]
-                           flex items-center gap-2"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  Download Resume
-                </button>
-              </div>
+              <h3 className="text-xl font-semibold text-text-primary mb-4">Resume</h3>
+              <p className="text-text-secondary text-center mb-6">
+                Download my latest resume to learn more about my experience and skills.
+              </p>
+              <a
+                href="/resume.pdf"
+                download="Manisha_Chand_Resume.pdf"
+                className="flex items-center space-x-2 px-6 py-3 bg-button hover:bg-button-hover text-white rounded-lg transition-all duration-300"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span>Download Resume</span>
+              </a>
             </div>
           </motion.section>
 

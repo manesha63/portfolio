@@ -34,7 +34,7 @@ const Home: React.FC = () => {
                      transition-all duration-500"
         >
           <img
-              src="/profile.jpg"
+              src={process.env.PUBLIC_URL + "/profile.jpg"}
             alt="Manisha's Profile"
             className="w-full h-full object-cover"
           />
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
           className="space-y-6 mb-24"
         >
             <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-accent to-button">
-              CS Student | 21 | CCSF ➔ SFSU
+              Developer | CCSF ➔ SFSU
           </h1>
         </motion.div>
 
