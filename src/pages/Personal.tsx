@@ -129,7 +129,7 @@ const Personal: React.FC = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="text-lg md:text-xl text-text-secondary leading-relaxed"
                 >
-                  I'm a CS student at SFSU. I spend most of my time buried in schoolwork, and the rest doing absolutely nothing — which somehow gets boring too. So eventually, I'm forced to go out and do something just to keep myself entertained. Welcome to my page — no promises, but you might find something mildly interesting here.
+                  I'm a CS student at SFSU. I spend most of my time buried in schoolwork, and the rest trying to do things that help me grow, learn, and make the most out of my time and resources — you know, instead of spiraling into the pothole of anxiety and existential dread (which is tempting, but not very productive). Welcome to my page — no promises, but you might find something mildly interesting here.
                 </motion.p>
               </div>
             </div>
