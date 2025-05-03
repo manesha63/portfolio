@@ -282,9 +282,11 @@ const Professional: React.FC = () => {
                 Download my latest resume to learn more about my experience and skills.
               </p>
               <a
-                href="/resume.pdf"
+                href={`${process.env.PUBLIC_URL}/Manisha_Chand_Resume.pdf`}
                 download="Manisha_Chand_Resume.pdf"
-                className="flex items-center space-x-2 px-6 py-3 bg-button hover:bg-button-hover text-white rounded-lg transition-all duration-300"
+                className="flex items-center space-x-2 px-6 py-3 bg-button hover:bg-button-hover text-white rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(167,139,250,0.5)]"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

@@ -141,7 +141,7 @@ const Personal: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-16"
           >
-            <h2 className="text-3xl font-bold text-gradient mb-8">Things I Happen to Do Instead of Nothing</h2>
+            <h2 className="text-3xl font-bold text-gradient mb-8">My Everyday Adventures</h2>
             
             {/* Cafe Hopping */}
             <div className="mb-6">
